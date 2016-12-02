@@ -1,0 +1,1379 @@
+fileFormatVersion: 2
+guid: 84cbb55cbb518a44fb49edbd63cf9dad
+timeCreated: 1480112839
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: xeonsheet_0
+    21300002: xeonsheet_1
+    21300004: xeonsheet_2
+    21300006: xeonsheet_3
+    21300008: xeonsheet_4
+    21300010: xeonsheet_5
+    21300012: xeonsheet_6
+    21300014: xeonsheet_7
+    21300016: xeonsheet_8
+    21300018: xeonsheet_9
+    21300020: xeonsheet_10
+    21300022: xeonsheet_11
+    21300024: xeonsheet_12
+    21300026: xeonsheet_13
+    21300028: xeonsheet_14
+    21300030: xeonsheet_15
+    21300032: xeonsheet_16
+    21300034: xeonsheet_17
+    21300036: xeonsheet_18
+    21300038: xeonsheet_19
+    21300040: xeonsheet_20
+    21300042: xeonsheet_21
+    21300044: xeonsheet_22
+    21300046: xeonsheet_23
+    21300048: xeonsheet_24
+    21300050: xeonsheet_25
+    21300052: xeonsheet_26
+    21300054: xeonsheet_27
+    21300056: xeonsheet_28
+    21300058: xeonsheet_29
+    21300060: xeonsheet_30
+    21300062: xeonsheet_31
+    21300064: xeonsheet_32
+    21300066: xeonsheet_33
+    21300068: xeonsheet_34
+    21300070: xeonsheet_35
+    21300072: xeonsheet_36
+    21300074: xeonsheet_37
+    21300076: xeonsheet_38
+    21300078: xeonsheet_39
+    21300080: xeonsheet_40
+    21300082: xeonsheet_41
+    21300084: xeonsheet_42
+    21300086: xeonsheet_43
+    21300088: xeonsheet_44
+    21300090: xeonsheet_45
+    21300092: xeonsheet_46
+    21300094: xeonsheet_47
+    21300096: xeonsheet_48
+    21300098: xeonsheet_49
+    21300100: xeonsheet_50
+    21300102: xeonsheet_51
+    21300104: xeonsheet_52
+    21300106: xeonsheet_53
+    21300108: xeonsheet_54
+    21300110: xeonsheet_55
+    21300112: xeonsheet_56
+    21300114: xeonsheet_57
+    21300116: xeonsheet_58
+    21300118: xeonsheet_59
+    21300120: xeonsheet_60
+    21300122: xeonsheet_61
+    21300124: xeonsheet_62
+    21300126: xeonsheet_63
+    21300128: xeonsheet_64
+    21300130: xeonsheet_65
+    21300132: xeonsheet_66
+    21300134: xeonsheet_67
+    21300136: xeonsheet_68
+    21300138: xeonsheet_69
+    21300140: xeonsheet_70
+    21300142: xeonsheet_71
+    21300144: xeonsheet_72
+    21300146: xeonsheet_73
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: xeonsheet_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 754
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 32}
+        - {x: -17.5, y: 31}
+        - {x: -20.5, y: 17}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 22}
+        - {x: 13.5, y: 32}
+    - name: xeonsheet_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 751
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 31}
+        - {x: -19, y: 20}
+        - {x: -19, y: -13}
+        - {x: -9, y: -25}
+        - {x: -2, y: -31}
+        - {x: 14, y: -31}
+        - {x: 19, y: -25}
+        - {x: 19, y: 20}
+        - {x: 16, y: 31}
+    - name: xeonsheet_2
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 753
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 32}
+        - {x: -17.5, y: 31}
+        - {x: -20.5, y: 17}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 22}
+        - {x: 13.5, y: 32}
+    - name: xeonsheet_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 755
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: -29}
+        - {x: 14, y: -29}
+        - {x: 21, y: -25}
+        - {x: 21, y: -6}
+        - {x: 13, y: 28}
+        - {x: 13, y: 29}
+        - {x: -12, y: 29}
+        - {x: -21, y: 25}
+        - {x: -21, y: -29}
+        - {x: -2, y: -29}
+        - {x: -2, y: -25}
+        - {x: -2, y: -28}
+    - name: xeonsheet_4
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 761
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 30}
+        - {x: 10, y: 32}
+        - {x: -16, y: 32}
+        - {x: -21, y: 30}
+        - {x: -21, y: -32}
+        - {x: 21, y: -32}
+        - {x: 21, y: 20}
+    - name: xeonsheet_5
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 759
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 32}
+        - {x: -17.5, y: 31}
+        - {x: -20.5, y: 17}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 22}
+        - {x: 13.5, y: 32}
+    - name: xeonsheet_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 668
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 35}
+        - {x: -35, y: -35}
+        - {x: 35, y: -35}
+        - {x: 35, y: 35}
+    - name: xeonsheet_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 670
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 31.5}
+        - {x: -15.5, y: 28.5}
+        - {x: -20.5, y: 15.5}
+        - {x: -20.5, y: -21.5}
+        - {x: -17.5, y: -31.5}
+        - {x: 20.5, y: -31.5}
+        - {x: 20.5, y: 9.5}
+        - {x: 11.5, y: 31.5}
+    - name: xeonsheet_8
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 670
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 31}
+        - {x: -6.5, y: 31}
+        - {x: -7.5, y: 30}
+        - {x: -20.5, y: 20}
+        - {x: -20.5, y: -31}
+        - {x: 20.5, y: -31}
+        - {x: 20.5, y: 8}
+        - {x: 13.5, y: 26}
+    - name: xeonsheet_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 673
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_10
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 672
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_11
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 677
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 32}
+        - {x: -17.5, y: 32}
+        - {x: -27.5, y: 15}
+        - {x: -27.5, y: -32}
+        - {x: 13.5, y: -32}
+        - {x: 27.5, y: -15}
+        - {x: 27.5, y: 9}
+    - name: xeonsheet_12
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 679
+        width: 69
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.5, y: -8}
+        - {x: 34.5, y: 6}
+        - {x: 26.5, y: 23}
+        - {x: 6.5, y: 31}
+        - {x: -33.5, y: 31}
+        - {x: -34.5, y: 29}
+        - {x: -34.5, y: -31}
+        - {x: -18.5, y: -31}
+        - {x: -17.5, y: -30}
+        - {x: -15.5, y: -31}
+        - {x: 4.5, y: -31}
+    - name: xeonsheet_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 679
+        width: 80
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: -27}
+        - {x: -2, y: -14}
+        - {x: 40, y: -4}
+        - {x: 40, y: 3}
+        - {x: 21, y: 8}
+        - {x: -6, y: 31}
+        - {x: -29, y: 31}
+        - {x: -40, y: 21}
+        - {x: -40, y: -31}
+        - {x: -24, y: -31}
+        - {x: -23, y: -30}
+        - {x: -21, y: -31}
+        - {x: -3, y: -31}
+    - name: xeonsheet_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 592
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 31.5}
+        - {x: -21, y: 25.5}
+        - {x: -21, y: -31.5}
+        - {x: 21, y: -31.5}
+        - {x: 21, y: 24.5}
+        - {x: 10, y: 31.5}
+    - name: xeonsheet_15
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 592
+        width: 34
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 31.5}
+        - {x: -17, y: 29.5}
+        - {x: -17, y: -20.5}
+        - {x: -11, y: -28.5}
+        - {x: -8, y: -31.5}
+        - {x: 12, y: -31.5}
+        - {x: 17, y: -20.5}
+        - {x: 17, y: 19.5}
+        - {x: 11, y: 31.5}
+    - name: xeonsheet_16
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 592
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 31}
+        - {x: -11, y: 31}
+        - {x: -21, y: 14}
+        - {x: -22, y: 6}
+        - {x: -22, y: -12}
+        - {x: -11, y: -31}
+        - {x: 14, y: -31}
+        - {x: 22, y: -20}
+        - {x: 22, y: 12}
+        - {x: 17, y: 29}
+    - name: xeonsheet_17
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 591
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 18}
+        - {x: 9, y: 32}
+        - {x: -10, y: 32}
+        - {x: -19, y: 20}
+        - {x: -19, y: -13}
+        - {x: -10, y: -27}
+        - {x: -3, y: -32}
+        - {x: 12, y: -32}
+        - {x: 13, y: -31}
+        - {x: 13, y: -28}
+        - {x: 19, y: -18}
+    - name: xeonsheet_18
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 591
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_19
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 596
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 32}
+        - {x: -16.5, y: 32}
+        - {x: -26.5, y: 20}
+        - {x: -26.5, y: -32}
+        - {x: 12.5, y: -32}
+        - {x: 26.5, y: -15}
+        - {x: 26.5, y: 9}
+    - name: xeonsheet_20
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 598
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 31}
+        - {x: -23.5, y: 31}
+        - {x: -32.5, y: 19}
+        - {x: -32.5, y: -31}
+        - {x: 14.5, y: -31}
+        - {x: 24.5, y: -15}
+        - {x: 32.5, y: -3}
+        - {x: 32.5, y: 6}
+    - name: xeonsheet_21
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 602
+        width: 76
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 31}
+        - {x: -38, y: 24}
+        - {x: -38, y: -31}
+        - {x: 3, y: -31}
+        - {x: 38, y: -5}
+        - {x: 38, y: 11}
+        - {x: -8, y: 31}
+    - name: xeonsheet_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 513
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_23
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 514
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: -20.5}
+        - {x: 0, y: -28.5}
+        - {x: 1, y: -29.5}
+        - {x: 18, y: -29.5}
+        - {x: 19, y: -24.5}
+        - {x: 19, y: 16.5}
+        - {x: 14, y: 29.5}
+        - {x: -19, y: 29.5}
+        - {x: -19, y: -27.5}
+        - {x: -16, y: -29.5}
+        - {x: -1, y: -29.5}
+        - {x: 0, y: -28.5}
+        - {x: 0, y: -25.5}
+        - {x: 1, y: -22.5}
+    - name: xeonsheet_24
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 522
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_25
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 514
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_26
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 518
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_27
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 517
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 23.5}
+        - {x: -16, y: 23.5}
+        - {x: -16, y: -21.5}
+        - {x: -10, y: -23.5}
+        - {x: 16, y: -23.5}
+        - {x: 16, y: 5.5}
+        - {x: 13, y: 21.5}
+    - name: xeonsheet_28
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 515
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: -21.5}
+        - {x: 0, y: -29.5}
+        - {x: 1, y: -30.5}
+        - {x: 19, y: -30.5}
+        - {x: 19, y: 14.5}
+        - {x: 12, y: 30.5}
+        - {x: -19, y: 30.5}
+        - {x: -19, y: -30.5}
+        - {x: 0, y: -30.5}
+        - {x: 0, y: -26.5}
+        - {x: 1, y: -23.5}
+    - name: xeonsheet_29
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 391
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_30
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 395
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 24.5}
+        - {x: 17, y: 29.5}
+        - {x: -8, y: 29.5}
+        - {x: -19, y: 19.5}
+        - {x: -19, y: -29.5}
+        - {x: 19, y: -29.5}
+    - name: xeonsheet_31
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 394
+        width: 40
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 36.5}
+        - {x: -15, y: 34.5}
+        - {x: -20, y: 29.5}
+        - {x: -20, y: -36.5}
+        - {x: 18, y: -36.5}
+        - {x: 20, y: -32.5}
+        - {x: 20, y: 21.5}
+        - {x: 13, y: 36.5}
+    - name: xeonsheet_32
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 397
+        width: 40
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 37.5}
+        - {x: -10, y: 37.5}
+        - {x: -15, y: 35.5}
+        - {x: -20, y: 30.5}
+        - {x: -20, y: -36.5}
+        - {x: -18, y: -37.5}
+        - {x: 16, y: -37.5}
+        - {x: 20, y: -25.5}
+        - {x: 20, y: 20.5}
+    - name: xeonsheet_33
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 399
+        width: 40
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 38.5}
+        - {x: -18, y: 38.5}
+        - {x: -20, y: 29.5}
+        - {x: -20, y: -29.5}
+        - {x: -17, y: -38.5}
+        - {x: 16, y: -38.5}
+        - {x: 20, y: -29.5}
+        - {x: 20, y: 21.5}
+    - name: xeonsheet_34
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 386
+        width: 40
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 37.5}
+        - {x: -14, y: 37.5}
+        - {x: -20, y: 30.5}
+        - {x: -20, y: -35.5}
+        - {x: -15, y: -37.5}
+        - {x: 3, y: -37.5}
+        - {x: 20, y: -29.5}
+        - {x: 20, y: 23.5}
+        - {x: 18, y: 35.5}
+    - name: xeonsheet_35
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 386
+        width: 41
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 38.5}
+        - {x: -20.5, y: 30.5}
+        - {x: -20.5, y: -35.5}
+        - {x: -19.5, y: -38.5}
+        - {x: 15.5, y: -38.5}
+        - {x: 20.5, y: -19.5}
+        - {x: 20.5, y: 31.5}
+        - {x: 14.5, y: 38.5}
+    - name: xeonsheet_36
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 399
+        width: 43
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: -46}
+        - {x: -19.5, y: -52}
+        - {x: -15.5, y: -54}
+        - {x: -0.5, y: -54}
+        - {x: 21.5, y: -51}
+        - {x: 21.5, y: 54}
+        - {x: 9.5, y: 54}
+        - {x: -21.5, y: 25}
+    - name: xeonsheet_37
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 275
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 24.5}
+        - {x: 17, y: 29.5}
+        - {x: -8, y: 29.5}
+        - {x: -19, y: 19.5}
+        - {x: -19, y: -29.5}
+        - {x: 19, y: -29.5}
+    - name: xeonsheet_38
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 274
+        width: 40
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 36.5}
+        - {x: -15, y: 34.5}
+        - {x: -20, y: 29.5}
+        - {x: -20, y: -36.5}
+        - {x: 18, y: -36.5}
+        - {x: 20, y: -32.5}
+        - {x: 20, y: 21.5}
+        - {x: 13, y: 36.5}
+    - name: xeonsheet_39
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 281
+        width: 40
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 37.5}
+        - {x: -10, y: 37.5}
+        - {x: -15, y: 35.5}
+        - {x: -20, y: 30.5}
+        - {x: -20, y: -36.5}
+        - {x: -18, y: -37.5}
+        - {x: 16, y: -37.5}
+        - {x: 20, y: -25.5}
+        - {x: 20, y: 20.5}
+    - name: xeonsheet_40
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 287
+        width: 40
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 38.5}
+        - {x: -18, y: 38.5}
+        - {x: -20, y: 29.5}
+        - {x: -20, y: -29.5}
+        - {x: -17, y: -38.5}
+        - {x: 16, y: -38.5}
+        - {x: 20, y: -29.5}
+        - {x: 20, y: 21.5}
+    - name: xeonsheet_41
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 289
+        width: 40
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 31}
+        - {x: 9, y: 37}
+        - {x: -15, y: 37}
+        - {x: -20, y: 28}
+        - {x: -20, y: -32}
+        - {x: -16, y: -37}
+        - {x: 14, y: -37}
+        - {x: 20, y: -31}
+        - {x: 20, y: 10}
+        - {x: 19, y: 16}
+    - name: xeonsheet_42
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 282
+        width: 40
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 39}
+        - {x: -9, y: 39}
+        - {x: -20, y: 27}
+        - {x: -20, y: -4}
+        - {x: -7, y: -32}
+        - {x: -4, y: -30}
+        - {x: 2, y: -39}
+        - {x: 13, y: -39}
+        - {x: 20, y: -23}
+        - {x: 20, y: 25}
+        - {x: 16, y: 35}
+    - name: xeonsheet_43
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 272
+        width: 40
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 42}
+        - {x: -20, y: 32}
+        - {x: -20, y: -1}
+        - {x: -1, y: -42}
+        - {x: 8, y: -42}
+        - {x: 18, y: -38}
+        - {x: 20, y: -25}
+        - {x: 20, y: 36}
+        - {x: 12, y: 42}
+    - name: xeonsheet_44
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 273
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 33}
+        - {x: -20, y: 27}
+        - {x: -20, y: -33}
+        - {x: 20, y: -33}
+        - {x: 20, y: 22}
+        - {x: 16, y: 33}
+    - name: xeonsheet_45
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 179
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_46
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 180
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 32}
+        - {x: -12, y: 32}
+        - {x: -24, y: 15}
+        - {x: -24, y: -32}
+        - {x: 24, y: -32}
+        - {x: 24, y: 15}
+        - {x: 16, y: 31}
+    - name: xeonsheet_47
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 179
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 32}
+        - {x: -20.5, y: 28}
+        - {x: -27.5, y: 15}
+        - {x: -27.5, y: -22}
+        - {x: -25.5, y: -26}
+        - {x: -26.5, y: -32}
+        - {x: 18.5, y: -32}
+        - {x: 27.5, y: -18}
+        - {x: 27.5, y: 26}
+        - {x: 10.5, y: 32}
+    - name: xeonsheet_48
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 180
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 32}
+        - {x: -24.5, y: 15}
+        - {x: -25.5, y: 14}
+        - {x: -25.5, y: -9}
+        - {x: -22.5, y: -12}
+        - {x: -22.5, y: -32}
+        - {x: 17.5, y: -32}
+        - {x: 25.5, y: -20}
+        - {x: 25.5, y: 25}
+        - {x: 11.5, y: 32}
+    - name: xeonsheet_49
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 214
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_50
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 214
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_51
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 214
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_52
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 214
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_53
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 214
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_54
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 174
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: 32}
+        - {x: -15.5, y: 32}
+        - {x: -25.5, y: 21}
+        - {x: -25.5, y: -32}
+        - {x: 17.5, y: -32}
+        - {x: 25.5, y: -5}
+        - {x: 25.5, y: 11}
+        - {x: 18.5, y: 12}
+    - name: xeonsheet_55
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 96
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -20.5, y: 16}
+        - {x: -20.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 20.5, y: 32}
+    - name: xeonsheet_56
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 97
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 32}
+        - {x: -12, y: 32}
+        - {x: -24, y: 15}
+        - {x: -24, y: -32}
+        - {x: 24, y: -32}
+        - {x: 24, y: 15}
+        - {x: 16, y: 31}
+    - name: xeonsheet_57
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 96
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 32}
+        - {x: -28, y: 23}
+        - {x: -28, y: -32}
+        - {x: 27, y: -32}
+        - {x: 28, y: -31}
+        - {x: 28, y: 20}
+        - {x: 7, y: 32}
+    - name: xeonsheet_58
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 96
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 32}
+        - {x: -28, y: 23}
+        - {x: -28, y: -32}
+        - {x: 27, y: -32}
+        - {x: 28, y: -31}
+        - {x: 28, y: 20}
+        - {x: 7, y: 32}
+    - name: xeonsheet_59
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 97
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 32}
+        - {x: -21, y: 28}
+        - {x: -28, y: 15}
+        - {x: -28, y: -22}
+        - {x: -26, y: -26}
+        - {x: -27, y: -32}
+        - {x: 16, y: -32}
+        - {x: 28, y: -11}
+        - {x: 28, y: 20}
+        - {x: 4, y: 32}
+    - name: xeonsheet_60
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 124
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_61
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 126
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_62
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 127
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_63
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 127
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_64
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 113
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_65
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 113
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_66
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 112
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_67
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 112
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_68
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 106
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_69
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 108
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_70
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 108
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_71
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 108
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: xeonsheet_72
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 6
+        width: 39
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 28}
+        - {x: 12.5, y: 32}
+        - {x: -7.5, y: 32}
+        - {x: -10.5, y: 26}
+        - {x: -18.5, y: 15}
+        - {x: -19.5, y: 14}
+        - {x: -19.5, y: -9}
+        - {x: -16.5, y: -12}
+        - {x: -18.5, y: -32}
+        - {x: 0.5, y: -32}
+        - {x: 19.5, y: -30}
+        - {x: 19.5, y: 16}
+    - name: xeonsheet_73
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 6
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 32}
+        - {x: -28, y: 22}
+        - {x: -28, y: -31}
+        - {x: -26, y: -32}
+        - {x: -6, y: -32}
+        - {x: 28, y: -5}
+        - {x: 28, y: 11}
+        - {x: 6, y: 32}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
