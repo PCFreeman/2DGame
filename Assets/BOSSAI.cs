@@ -50,5 +50,5 @@ public class BOSSAI : MonoBehaviour
             myAnimator.SetBool("IsJump", false);
         }
     }
-
+    round
 }
