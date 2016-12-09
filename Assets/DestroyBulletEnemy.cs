@@ -8,7 +8,7 @@ public class DestroyBulletEnemy : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<BOSS>() == null)
+        if (collision.gameObject.GetComponent<BOSSAI>() == null)
         {
             Destroy(gameObject);
         }
