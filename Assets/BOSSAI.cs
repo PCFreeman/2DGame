@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BOSSAI : MonoBehaviour
 {
-    private Rigidbody2D myRigidbody;
     public Transform target;
     public int moveSpeed;
     private Animator myAnimator;
