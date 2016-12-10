@@ -8,7 +8,7 @@ public class Control : MonoBehaviour
     public float laserspeed = 3f;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag("Ground")|| collision.gameObject.CompareTag("PlantForm"))
             {
             myAnimator.SetBool("IsJump",false);
             }
@@ -99,18 +99,18 @@ public class Control : MonoBehaviour
                 }
 
             }
-            if(transform.localScale.x<0)
+            else if(transform.localScale.x<0)
             {
                 bullet.transform.localScale= new Vector3(-1, 1, 1);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * laserspeed;
                 if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
                 {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
                     bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
                 }
                 if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
                 {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
                     bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
                 }
             }

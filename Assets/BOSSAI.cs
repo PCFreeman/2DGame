@@ -14,6 +14,7 @@ public class BOSSAI : MonoBehaviour
     public GameObject BossFirepoint;
     public GameObject BossLaser;
     public float AttackSpeed;
+    private bool IsAttacking;
     void Awake()
     {
         myAnimator = GetComponent<Animator>();
@@ -24,14 +25,21 @@ public class BOSSAI : MonoBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("Player");
 
         target = go.transform;
+      
+         
+        
+      
 
-        InvokeRepeating("shoot", 0, AttackSpeed);
     }
     void move()
     {
         if (Vector3.Distance(transform.position, target.position) <= MinDist)
         {
-
+            if (IsAttacking == false)
+            {
+                InvokeRepeating("shoot", 0, AttackSpeed);
+                IsAttacking = true;
+            }
             transform.position += (target.position - transform.position).normalized * moveSpeed * Time.deltaTime;
             if (previousLocation.x - transform.position.x >= 0)
             {
@@ -49,59 +57,71 @@ public class BOSSAI : MonoBehaviour
             }
         }
         else
-        { myAnimator.SetBool("IsWalk", false); }
+        {
+            myAnimator.SetBool("IsWalk", false);
+            IsAttacking = false;
+            CancelInvoke("shoot");
+        }
 }
 
     void shoot()
     {
         GameObject bullet = Instantiate(BossLaser, BossFirepoint.transform.position, transform.rotation) as GameObject;
         bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * laserspeed;
-        if ((int)target.position.x - (int)transform.position.x > 0)
+       if ((int)target.position.x - (int)transform.position.x > 0)
         {
             Debug.Log("right");
             bullet.transform.localScale = new Vector3(1, 1, 1);
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * laserspeed;
-            if ((int)target.position.y - (int)transform.position.y <= 0)
+            if ((int)target.position.y - (int)transform.position.y < 0)
             {
+                Debug.Log("Rdown");
                 bullet.transform.eulerAngles = new Vector3(0, 0, -90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
             }
-            else if ((int)target.position.y - (int)transform.position.y >= 0)
+            else if ((int)target.position.y - (int)transform.position.y > 0)
             {
+                Debug.Log("Rup");
                 bullet.transform.eulerAngles = new Vector3(0, 0, 90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
             }
         }
-        else if ((int)target.position.x - (int)transform.position.x < 0)
+        else if((int)target.position.x - (int)transform.position.x <= 0)
         {
             Debug.Log("left");
             bullet.transform.localScale = new Vector3(-1, 1, 1);
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * laserspeed;
-            if ((int)target.position.y - (int)transform.position.y <= 0)
+            if ((int)target.position.y - (int)transform.position.y < 0)
             {
-                bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                Debug.Log("Ldown");
+                bullet.transform.eulerAngles = new Vector3(0, 0, 90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
             }
-            else if ((int)target.position.y - (int)transform.position.y >= 0)
+            else if ((int)target.position.y - (int)transform.position.y > 0)
             {
-                bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                Debug.Log("Lup");
+                bullet.transform.eulerAngles = new Vector3(0, 0, -90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
             }
         }
+
+
+
+
     }
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        dir.z = 0.0f; // Only needed if objects don't share 'z' value
+       
 
         previousLocation = transform.position;
 
             move();
-           // shoot();
-      
-           
+        // shoot();
        
-      
+       
+
+
+
     }
    
 }

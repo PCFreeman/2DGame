@@ -18,7 +18,7 @@ public class Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         HealthBarText.text = CurrentHealth + "/" + MaxHealth;
-        HealthBar.sizeDelta = new Vector2(CurrentHealth, HealthBar.sizeDelta.y);
+        HealthBar.sizeDelta = new Vector2(CurrentHealth*3, HealthBar.sizeDelta.y);
     }
 
     public void Damage(int damage)
