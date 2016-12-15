@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Health : MonoBehaviour {
@@ -39,6 +40,7 @@ public class Health : MonoBehaviour {
         {
             CancelInvoke("BlinkThenDie");
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
         ++BlinkCounter;
     }

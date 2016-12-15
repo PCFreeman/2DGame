@@ -28,6 +28,7 @@ public class TurretAI : MonoBehaviour {
         if ((int)target.position.x - (int)transform.position.x > 0)
         {
             myAnimator.SetBool("IsShoot", true);
+            transform.localScale = new Vector3(1, 1, 1);
             bullet.transform.localScale = new Vector3(1, 1, 1);
             bullet2.transform.localScale = new Vector3(1, 1, 1);
             bullet3.transform.localScale = new Vector3(1, 1, 1);
@@ -42,6 +43,7 @@ public class TurretAI : MonoBehaviour {
         else if ((int)target.position.x - (int)transform.position.x < 0)
         {
             myAnimator.SetBool("IsShoot", true);
+            transform.localScale = new Vector3(-1, 1, 1);
             bullet.transform.localScale = new Vector3(-1, 1, 1);
             bullet2.transform.localScale = new Vector3(-1, 1, 1);
             bullet3.transform.localScale = new Vector3(-1, 1, 1);

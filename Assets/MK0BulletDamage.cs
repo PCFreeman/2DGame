@@ -16,10 +16,16 @@ public class MK0BulletDamage : MonoBehaviour {
             BOSSHP Health = collision.gameObject.GetComponent<BOSSHP>();
             Health.Damage(Damage);
         }
-        else if(collision.gameObject.GetComponent<TurretHP>())
+         if(collision.gameObject.GetComponent<TurretHP>())
         {
-            TurretHP Health1 = collision.gameObject.GetComponent<TurretHP>();
-             Health1.Damage(Damage);
+            Debug.Log("hit");
+            TurretHP Health = collision.gameObject.GetComponent<TurretHP>();
+             Health.Damage(Damage);
+        }
+        if (collision.gameObject.GetComponent<EndGameTurret>())
+        {
+            EndGameTurret Health = collision.gameObject.GetComponent<EndGameTurret>();
+            Health.Damage(Damage);
         }
     }
 }

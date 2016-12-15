@@ -34,6 +34,7 @@ public class BOSSAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.position) <= MinDist)
         {
+            myAnimator.SetBool("IsJump", false);
             if (IsAttacking == false)
             {
                 InvokeRepeating("shoot", 0, AttackSpeed);
