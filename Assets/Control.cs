@@ -81,7 +81,16 @@ public class Control : MonoBehaviour
             myAnimator.SetBool("lookdown", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            myAnimator.SetBool("kick",true);
+        }
+        else
+        {
+            myAnimator.SetBool("kick", false);
+        }
+
+            if (Input.GetKeyDown(KeyCode.Z))
         {
             GameObject bullet = Instantiate(laser, firepoint.transform.position, transform.rotation) as GameObject;
             if(transform.localScale.x>0)
