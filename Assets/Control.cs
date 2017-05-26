@@ -4,6 +4,7 @@ using System.Collections;
 public class Control : MonoBehaviour
 {
     public GameObject firepoint;
+    public GameObject foot;
     public GameObject laser;
     public float laserspeed = 3f;
     public void OnCollisionEnter2D(Collision2D collision)
@@ -84,6 +85,8 @@ public class Control : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             myAnimator.SetBool("kick",true);
+            foot.GetComponent<BoxCollider2D>().enabled = true;
+            Debug.Log("kick");
         }
         else
         {

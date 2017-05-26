@@ -15,6 +15,8 @@ public class Health : MonoBehaviour {
 
     public RectTransform HealthBar;
     public Text HealthBarText;
+
+    public GameObject foot;
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,5 +45,10 @@ public class Health : MonoBehaviour {
             SceneManager.LoadScene(2);
         }
         ++BlinkCounter;
+    }
+
+    public void Diactive()
+    {
+        foot.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
