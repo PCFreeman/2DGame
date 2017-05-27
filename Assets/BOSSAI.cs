@@ -7,8 +7,8 @@ public class BOSSAI : MonoBehaviour
     public int moveSpeed;
     private Animator myAnimator;
     private Vector2 previousLocation;
-    public int MaxDist = 10;
-    public int MinDist = 10;
+    public int MaxDist = 0;
+    public int MinDist = 0;
     public float laserspeed = 3f;
     public GameObject BossFirepoint;
     public GameObject BossLaser;
@@ -32,7 +32,7 @@ public class BOSSAI : MonoBehaviour
     }
     void move()
     {
-        if (Vector3.Distance(transform.position, target.position) <= MinDist)
+        if (Vector3.Distance(transform.position, target.position) <= MaxDist&& Vector3.Distance(transform.position, target.position) > MinDist)
         {
             myAnimator.SetBool("IsJump", false);
             if (IsAttacking == false)
@@ -56,9 +56,13 @@ public class BOSSAI : MonoBehaviour
                 myAnimator.SetBool("IsJump", true);
             }
         }
-        else
+        else if(Vector3.Distance(transform.position, target.position) <= MinDist)
         {
             myAnimator.SetBool("IsWalk", false);
+          
+        }
+        if(Vector3.Distance(transform.position, target.position)> MaxDist)
+        {
             IsAttacking = false;
             CancelInvoke("shoot");
         }
