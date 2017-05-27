@@ -7,6 +7,7 @@ public class EndGameTurret : MonoBehaviour {
 
     public int MaxHealth;
     public int CurrentHealth;
+    public GameObject boss;
 
 
 
@@ -19,7 +20,8 @@ public class EndGameTurret : MonoBehaviour {
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(3);
+            boss.SetActive(true);
+           // SceneManager.LoadScene(3);
         }
     }
 }
