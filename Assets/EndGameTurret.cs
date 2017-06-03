@@ -8,7 +8,8 @@ public class EndGameTurret : MonoBehaviour {
     public int MaxHealth;
     public int CurrentHealth;
     public GameObject boss;
-
+    public GameObject player;
+    public GameObject map;
 
 
     // Update is called once per frame
@@ -21,6 +22,8 @@ public class EndGameTurret : MonoBehaviour {
         {
             Destroy(gameObject);
             boss.SetActive(true);
+            player.SetActive(false);
+            map.SetActive(true);
            // SceneManager.LoadScene(3);
         }
     }

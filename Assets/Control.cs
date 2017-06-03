@@ -7,6 +7,14 @@ public class Control : MonoBehaviour
     public GameObject foot;
     public GameObject laser;
     public float laserspeed = 3f;
+    [SerializeField]
+    AudioSource audiosource;
+    [SerializeField]
+    AudioClip j;
+    [SerializeField]
+    AudioClip s;
+    [SerializeField]
+    public AudioClip steps;
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground")|| collision.gameObject.CompareTag("PlantForm"))
@@ -16,7 +24,7 @@ public class Control : MonoBehaviour
     }
 
     private Rigidbody2D myRigidbody;
-    private Animator myAnimator;
+    public Animator myAnimator;
     public float speed = 5f;
     public float moveForce = 10f;
     public float jump = 500f;
@@ -62,6 +70,9 @@ public class Control : MonoBehaviour
         {
             if (!myAnimator.GetBool("IsJump"))
             {
+                audiosource.clip = j;
+                audiosource.Play();
+                
                 myRigidbody.AddForce(new Vector3(0, jump, 0));
                 myAnimator.SetBool("IsJump", true);
             }
@@ -126,7 +137,8 @@ public class Control : MonoBehaviour
                     bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
                 }
             }
-           
+            audiosource.clip = s;
+            audiosource.Play();
         }
         
     }

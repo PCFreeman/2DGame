@@ -14,6 +14,12 @@ public class BOSSAI : MonoBehaviour
     public GameObject BossLaser;
     public float AttackSpeed;
     private bool IsAttacking;
+   
+    [SerializeField]
+    AudioSource EnemySound;
+    [SerializeField]
+    AudioClip s;
+  
     void Awake()
     {
         myAnimator = GetComponent<Animator>();
@@ -65,6 +71,7 @@ public class BOSSAI : MonoBehaviour
         {
             IsAttacking = false;
             CancelInvoke("shoot");
+           
         }
 }
 
@@ -108,7 +115,8 @@ public class BOSSAI : MonoBehaviour
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
             }
         }
-
+        EnemySound.clip = s;
+        EnemySound.Play();
 
 
 

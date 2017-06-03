@@ -5,7 +5,8 @@ public class BOSSHP : MonoBehaviour {
 
     public int MaxHealth;
     public int CurrentHealth;
-
+    [SerializeField]
+    AudioSource die;
     
 
     // Update is called once per frame
@@ -13,10 +14,13 @@ public class BOSSHP : MonoBehaviour {
     public void Damage(int damage)
     {
         CurrentHealth -= damage;
-
+             die.Play();
+            Debug.Log("die");
         if (CurrentHealth <= 0)
         {
+            
             Destroy(gameObject);
+            
         }
     }
 

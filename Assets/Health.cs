@@ -17,6 +17,8 @@ public class Health : MonoBehaviour {
     public Text HealthBarText;
 
     public GameObject foot;
+
+    public AudioSource source;
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,5 +52,14 @@ public class Health : MonoBehaviour {
     public void Diactive()
     {
         foot.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    public void footsteps()
+    {
+        if (GetComponent<Control>().myAnimator.GetBool("IsWalk")&&!(GetComponent<Control>().myAnimator.GetBool("IsJump")))
+        {
+            source.clip = GetComponent<Control>().steps;
+            source.Play();
+        }
     }
 }
