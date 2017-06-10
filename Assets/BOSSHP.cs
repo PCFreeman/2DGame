@@ -6,7 +6,7 @@ public class BOSSHP : MonoBehaviour {
     public int MaxHealth;
     public int CurrentHealth;
     [SerializeField]
-    AudioSource audio;
+    AudioSource baudio;
     [SerializeField]
     AudioClip die;
 
@@ -16,13 +16,12 @@ public class BOSSHP : MonoBehaviour {
     public void Damage(int damage)
     {
         CurrentHealth -= damage;
-          
-            Debug.Log("die");
+            baudio.clip = die;
+            baudio.Play();
+           
         if (CurrentHealth <= 0)
         {
-            audio.clip = die;
-            audio.Play();
-            Destroy(gameObject,1);
+            Destroy(gameObject,0.5f);
             GetComponent<BOSSAI>().enabled = false;
             
         }

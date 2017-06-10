@@ -8,12 +8,14 @@ public class TurretHP : MonoBehaviour {
 
 
 
+
     // Update is called once per frame
 
     public void Damage(int damage)
     {
         CurrentHealth -= damage;
 
+    
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);

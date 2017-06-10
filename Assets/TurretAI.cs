@@ -10,10 +10,12 @@ public class TurretAI : MonoBehaviour {
     public GameObject TurretBullet;
     private Animator myAnimator;
     public float BulletSpeed = 3f;
-    public int MaxDist = 10;
     public int MinDist = 10;
     private bool IsAttacking;
     public float AttackSpeed;
+   
+   
+
     void shoot()
     {
         GameObject bullet = Instantiate(TurretBullet, TurretFirepoint.transform.position, transform.rotation) as GameObject;
@@ -72,8 +74,10 @@ public class TurretAI : MonoBehaviour {
     {
         if (Vector3.Distance(transform.position, target.position) <= MinDist)
         {
+           
             if (IsAttacking == false)
             {
+                
                 InvokeRepeating("shoot", 0, AttackSpeed);
                 IsAttacking = true;
             }
