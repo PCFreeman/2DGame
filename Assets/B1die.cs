@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class BOSSHP : MonoBehaviour {
+public class B1die : MonoBehaviour
+{
 
     public int MaxHealth;
     public int CurrentHealth;
@@ -14,14 +15,14 @@ public class BOSSHP : MonoBehaviour {
     public void Damage(int damage)
     {
         CurrentHealth -= damage;
-     
 
-        if ( CurrentHealth <= 0)
-            {
-            Destroy(gameObject);
+
+        if (CurrentHealth <= 0)
+        {
+            SceneManager.LoadScene(3);
         }
- 
+
     }
 
-   
+
 }

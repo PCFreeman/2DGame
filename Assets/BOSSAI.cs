@@ -30,10 +30,7 @@ public class BOSSAI : MonoBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("Player");
 
         target = go.transform;
-      
-         
-        
-      
+     
 
     }
     void move()

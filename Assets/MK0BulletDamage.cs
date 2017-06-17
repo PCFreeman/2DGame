@@ -27,5 +27,10 @@ public class MK0BulletDamage : MonoBehaviour {
             EndGameTurret Health = collision.gameObject.GetComponent<EndGameTurret>();
             Health.Damage(Damage);
         }
+        if (collision.gameObject.GetComponent<B1die>())
+        {
+            B1die Health = collision.gameObject.GetComponent<B1die>();
+            Health.Damage(Damage);
+        }
     }
 }
