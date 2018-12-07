@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Control : MonoBehaviour
@@ -7,6 +8,8 @@ public class Control : MonoBehaviour
     public GameObject foot;
     public GameObject laser;
     public float laserspeed = 3f;
+
+    public Button Up;
     [SerializeField]
     AudioSource audiosource;
     [SerializeField]
@@ -42,7 +45,7 @@ public class Control : MonoBehaviour
     void move()
     {
         float horiz = Input.GetAxisRaw("Horizontal");
-
+        
         if (horiz < 0)
         {
 
@@ -61,6 +64,8 @@ public class Control : MonoBehaviour
         transform.position += new Vector3(horiz, 0, 0) * Time.deltaTime * speed;
 
     }
+
+
 
     void FixedUpdate()
     {
