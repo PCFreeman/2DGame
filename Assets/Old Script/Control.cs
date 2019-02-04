@@ -25,7 +25,6 @@ public class Control : MonoBehaviour
     private HudButton MeleeButton;
     [SerializeField]
     private HudButton JumpButton;
-
     [SerializeField]
     AudioSource audiosource;
     [SerializeField]
