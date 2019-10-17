@@ -82,7 +82,45 @@ public class Control : MonoBehaviour
     }
 
     
+    void BulletFly()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) || ShootButton.IsPressed)
+        {
+            GameObject bullet = Instantiate(laser, firepoint.transform.position, transform.rotation) as GameObject;
+            if (transform.localScale.x > 0)
+            {
+                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * laserspeed;
+                if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
+                {
+                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
+                }
+                if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
+                {
+                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
+                }
 
+            }
+            else if (transform.localScale.x < 0)
+            {
+                bullet.transform.localScale = new Vector3(-1, 1, 1);
+                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * laserspeed;
+                if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
+                {
+                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
+                }
+                if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
+                {
+                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
+                }
+            }
+            audiosource.clip = s;
+            audiosource.Play();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -120,42 +158,8 @@ public class Control : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)||ShootButton.IsPressed)
-        {
-            GameObject bullet = Instantiate(laser, firepoint.transform.position, transform.rotation) as GameObject;
-            if(transform.localScale.x>0)
-            {
-              bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right* laserspeed;
-                if ( DownButton.IsPressed && ShootButton.IsPressed)
-                {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
-                }
-                if (UpButton.IsPressed && ShootButton.IsPressed)
-                {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
-                }
+        BulletFly();
 
-            }
-            else if(transform.localScale.x<0)
-            {
-                bullet.transform.localScale= new Vector3(-1, 1, 1);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * laserspeed;
-                if ( DownButton.IsPressed &&  ShootButton.IsPressed)
-                {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
-                }
-                if ( UpButton.IsPressed &&  ShootButton.IsPressed)
-                {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
-                }
-            }
-            audiosource.clip = s;
-            audiosource.Play();
-        }
-        
+
     }
 }
