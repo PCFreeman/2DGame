@@ -15,16 +15,8 @@ public class AnimationManager : MonoBehaviour
     {
         myAnimator.SetBool("IsWalk", Trigger);
     }
-
-    // Start is called before the first frame update
-    void Start()
+    public void Jump(bool Trigger)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        myAnimator.SetBool("IsJump", Trigger);
     }
 }
