@@ -11,12 +11,16 @@ public class AnimationManager : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
     }
-    public void Walk(bool Trigger)
+    public void WalkAnimation(bool Trigger)
     {
         myAnimator.SetBool("IsWalk", Trigger);
     }
-    public void Jump(bool Trigger)
+    public void JumpAnimation(bool Trigger)
     {
         myAnimator.SetBool("IsJump", Trigger);
+    }
+    public void KickAnimation(bool Trigger)
+    {
+        myAnimator.SetBool("kick", Trigger);
     }
 }
