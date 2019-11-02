@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    public bool IsMoving;
-    public bool IsJumping;
-    public bool IsKicking;
     private Rigidbody2D myRigidbody;
+    Animator mAnimator;
+    AudioSource mAudioSource;
+    public AudioClip ShootSound;
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm"))
+        {
+            //Am.JumpAnimation(false);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Jump", false);
+        }
+    }
+
     public void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        mAnimator = GetComponent<Animator>();
+        mAudioSource = GetComponent<AudioSource>();
     }
     public void MoveAction(float speed)
     {
@@ -18,41 +30,61 @@ public class PlayerActions : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            // Am.WalkAnimation(true);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
             direction.x = -1;
         }
         else if(Input.GetKey(KeyCode.RightArrow))
         {
             transform.localScale = new Vector3(1, 1, 1);
+            // Am.WalkAnimation(true);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
             direction.x = 1;
-        }
-        if (direction.x != 0)
-        {
-           IsMoving = true;
         }
         else
         {
-           IsMoving = false;
+            //Am.WalkAnimation(false);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Walk", false);
         }
+
         transform.position += direction * Time.deltaTime * speed;
+
+        if (Input.GetKey(KeyCode.DownArrow) )
+        {
+            AnimationManager.instance.PlayAnimation(mAnimator, "LookingDown", true);
+        }
+        else
+        {
+            AnimationManager.instance.PlayAnimation(mAnimator, "LookingDown", false);
+        }
     }
 
     public void JumpAction(float JumpForce)
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-          IsJumping = true;
-          myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
+            if (!mAnimator.GetBool("Jump"))
+            {
+                myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
+                //Am.JumpAnimation(true);
+                AnimationManager.instance.PlayAnimation(mAnimator, "Jump", true);
+            }
         }
     }
+
     public void KickAction(GameObject footpoint)
     {
         if (Input.GetKeyDown(KeyCode.X) )
         {
-            IsKicking = true;
+            // Am.KickAnimation(true);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Kick", true);
             footpoint.GetComponent<BoxCollider2D>().enabled = true;
-            Debug.Log("kick");
         }
-
+        else
+        {
+            //  Am.KickAnimation(false);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Kick", false);
+        }
     }
 
     public void ShootAction(GameObject Bullet, GameObject WeaponPosition, Transform Characterrotation,float bulletSpeed)
@@ -90,6 +122,8 @@ public class PlayerActions : MonoBehaviour
                     bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
                 }
             }
+            mAudioSource.clip = ShootSound;
+            mAudioSource.Play();
         }
     }
     // Update is called once per frame

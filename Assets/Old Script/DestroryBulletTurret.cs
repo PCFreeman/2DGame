@@ -13,6 +13,10 @@ public class DestroryBulletTurret : MonoBehaviour {
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.tag == "PlantForm")
+        {
+            Destroy(gameObject);
+        }
         if (collision.gameObject.GetComponent<Health>())
         {
             Health Health = collision.gameObject.GetComponent<Health>();

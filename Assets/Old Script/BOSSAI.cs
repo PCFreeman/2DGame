@@ -14,7 +14,8 @@ public class BOSSAI : MonoBehaviour
     public GameObject BossLaser;
     public float AttackSpeed;
     private bool IsAttacking;
-   
+    float num;
+
     [SerializeField]
     AudioSource EnemySound;
     [SerializeField]
@@ -30,10 +31,10 @@ public class BOSSAI : MonoBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("Player");
 
         target = go.transform;
-     
 
+        num = Vector3.Distance(transform.position, target.position);
     }
-    void move()
+    void Move()
     {
         if (Vector3.Distance(transform.position, target.position) <= MaxDist&& Vector3.Distance(transform.position, target.position) > MinDist)
         {
@@ -67,8 +68,7 @@ public class BOSSAI : MonoBehaviour
         if(Vector3.Distance(transform.position, target.position)> MaxDist)
         {
             IsAttacking = false;
-            CancelInvoke("shoot");
-           
+            CancelInvoke("shoot");   
         }
 }
 
@@ -124,8 +124,9 @@ public class BOSSAI : MonoBehaviour
 
         previousLocation = transform.position;
 
-            move();
+            Move();
         // shoot();
+
        
        
 
