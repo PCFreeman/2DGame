@@ -99,6 +99,7 @@ public class MinionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //mMinionAction.ShootStartCoroutine();
         Detect();
     }
 }

@@ -14,7 +14,7 @@ public class MinionAction : MonoBehaviour
         mAnimator = GetComponent<Animator>();
         
     }
-    //public void Shoot(Transform target, GameObject Bullet, GameObject WeaponPosition, Transform Characterrotation,float bulletSpeed,float attackspeed)
+    //public void Shoot(Transform target, GameObject Bullet, GameObject WeaponPosition, Transform Characterrotation, float bulletSpeed, float attackspeed)
     //{
     //    GameObject bullet = Instantiate(Bullet, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
     //    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * bulletSpeed;
@@ -86,4 +86,16 @@ public class MinionAction : MonoBehaviour
         }
     }
     // Update is called once per frame
+
+    //IEnumerator ShootCoroutine()
+    //{
+    //    Shoot();
+    //    yield return new WaitForSeconds(1);
+    //    Shoot();
+    //}
+
+    //public void ShootStartCoroutine()
+    //{
+    //    StartCoroutine("ShootCoroutine");
+    //}
 }
