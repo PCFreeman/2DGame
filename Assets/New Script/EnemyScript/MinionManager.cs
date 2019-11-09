@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MinionManager : MonoBehaviour
 {
-    MinionAction mMinionAction;
+    public MinionAction mMinionAction;
     public Transform target;
     public float laserspeed = 3f;
     public GameObject BossFirepoint;
@@ -18,12 +18,16 @@ public class MinionManager : MonoBehaviour
     public bool IsAttacking;
     public int MaxHealth;
     public int CurrentHealth;
+    public Transform GroundDetection;
 
     void Start()
     {
         mMinionAction = GetComponent<MinionAction>();
         mAudioSource = GetComponent<AudioSource>();
+
+
     }
+
     void Shoot()
     {
         mAudioSource.clip = ShotsSound;
@@ -75,14 +79,20 @@ public class MinionManager : MonoBehaviour
             mMinionAction.Move(target, moveSpeed);
             if (IsAttacking == false)
             {
-                InvokeRepeating("Shoot", 0, AttackSpeed);
+                //InvokeRepeating("Shoot", 0, AttackSpeed);
                 IsAttacking = true;
             }
         }
         if (Vector3.Distance(transform.position, target.position) > MaxDist)
         {
             IsAttacking = false;
-            CancelInvoke("Shoot");
+            //CancelInvoke("Shoot");
+        }
+        RaycastHit2D groundinfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 2f);
+
+        if (groundinfo.collider == null)
+        {
+            mMinionAction.Jump(300);
         }
     }
     public void Damage(int damage)
@@ -99,7 +109,10 @@ public class MinionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //mMinionAction.ShootStartCoroutine();
-        Detect();
+         Detect();
+        //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+       
     }
 }

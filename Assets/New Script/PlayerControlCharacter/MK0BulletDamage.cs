@@ -10,8 +10,14 @@ public class MK0BulletDamage : MonoBehaviour {
         if (collision.gameObject.tag =="PlantForm")
         {
             Destroy(gameObject);
+
         }
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Sense")
+        {
+            MinionManager jump = collision.gameObject.GetComponentInParent<MinionManager>();
+            jump.mMinionAction.Jump(300);
+        }
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
             MinionManager Health = collision.gameObject.GetComponent<MinionManager>();

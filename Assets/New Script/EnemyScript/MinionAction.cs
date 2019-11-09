@@ -6,13 +6,26 @@ public class MinionAction : MonoBehaviour
 {
     Animator mAnimator;
     private Vector2 previousLocation;
-
+    private Rigidbody2D myRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
         mAnimator = GetComponent<Animator>();
-        
+        myRigidbody = GetComponent<Rigidbody2D>();
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm"))
+        {
+            //Am.JumpAnimation(false);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Jump", false);
+        }
+
+        if(collision.gameObject.tag=="PlayerProjectile")
+        {
+            Jump(300);
+        }
     }
     //public void Shoot(Transform target, GameObject Bullet, GameObject WeaponPosition, Transform Characterrotation, float bulletSpeed, float attackspeed)
     //{
@@ -63,19 +76,26 @@ public class MinionAction : MonoBehaviour
             if (previousLocation.x - transform.position.x >= 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
-               // myAnimator.SetBool("IsWalk", true);
                 AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
 
             }
             else if (previousLocation.x - transform.position.x <= 0)
             {
                 transform.localScale = new Vector3(1, 1, 1);
-               // myAnimator.SetBool("IsWalk", true);
                 AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
 
             }
         }
-     
+    public void Jump(float JumpForce)
+    {
+      if (!mAnimator.GetBool("Jump"))
+        {
+                myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
+                //Am.JumpAnimation(true);
+                AnimationManager.instance.PlayAnimation(mAnimator, "Jump", true);
+        }
+      
+    }
 
     private void Update()
     {
