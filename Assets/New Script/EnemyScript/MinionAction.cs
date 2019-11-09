@@ -21,11 +21,6 @@ public class MinionAction : MonoBehaviour
             //Am.JumpAnimation(false);
             AnimationManager.instance.PlayAnimation(mAnimator, "Jump", false);
         }
-
-        if(collision.gameObject.tag=="PlayerProjectile")
-        {
-            Jump(300);
-        }
     }
     //public void Shoot(Transform target, GameObject Bullet, GameObject WeaponPosition, Transform Characterrotation, float bulletSpeed, float attackspeed)
     //{

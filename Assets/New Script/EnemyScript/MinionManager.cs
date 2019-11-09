@@ -112,7 +112,6 @@ public class MinionManager : MonoBehaviour
 
         //mMinionAction.ShootStartCoroutine();
          Detect();
-        //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
        
     }
 }
