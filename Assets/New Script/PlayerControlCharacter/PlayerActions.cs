@@ -11,7 +11,7 @@ public class PlayerActions : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm") || collision.gameObject.CompareTag("Enemy"))
         {
             //Am.JumpAnimation(false);
             AnimationManager.instance.PlayAnimation(mAnimator, "Jump", false);

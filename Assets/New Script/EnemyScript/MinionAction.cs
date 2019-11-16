@@ -92,6 +92,10 @@ public class MinionAction : MonoBehaviour
       
     }
 
+    public void SideShift(float force)
+    {
+        myRigidbody.AddForce(new Vector3(force, 0, 0));
+    }
     private void Update()
     {
         previousLocation = transform.position;

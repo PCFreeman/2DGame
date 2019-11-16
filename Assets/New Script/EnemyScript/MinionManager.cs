@@ -20,10 +20,17 @@ public class MinionManager : MonoBehaviour
     public int CurrentHealth;
     public Transform GroundDetection;
 
+    public float duration;    //the max time of a walking session (set to ten)
+    float elapsedTime = 0f; //time since started walk
+    float wait = 0f; //wait this much time
+    float waitTime = 0f; //waited this much time
+    bool move = true; //start moving
+    float randomX;  //randomly go this X direction
     void Start()
     {
         mMinionAction = GetComponent<MinionAction>();
         mAudioSource = GetComponent<AudioSource>();
+
 
 
     }
@@ -34,36 +41,36 @@ public class MinionManager : MonoBehaviour
         mAudioSource.Play();
         GameObject bullet = Instantiate(BossLaser, BossFirepoint.transform.position, transform.rotation) as GameObject;
         bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * laserspeed;
-        if ((int)target.position.x - (int)transform.position.x > 0)
+        if (Mathf.RoundToInt(target.position.x - transform.position.x) > 0)
         {
             Debug.Log("right");
             bullet.transform.localScale = new Vector3(1, 1, 1);
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * laserspeed;
-            if ((int)target.position.y - (int)transform.position.y < 0)
+            if (Mathf.RoundToInt(target.position.y - transform.position.y) < 0)
             {
                 Debug.Log("Rdown");
                 bullet.transform.eulerAngles = new Vector3(0, 0, -90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
             }
-            else if ((int)target.position.y - (int)transform.position.y > 0)
+            else if (Mathf.RoundToInt(target.position.y - transform.position.y) > 0)
             {
                 Debug.Log("Rup");
                 bullet.transform.eulerAngles = new Vector3(0, 0, 90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
             }
         }
-        else if ((int)target.position.x - (int)transform.position.x <= 0)
+        else if (Mathf.RoundToInt(target.position.x - transform.position.x) <= 0)
         {
             Debug.Log("left");
             bullet.transform.localScale = new Vector3(-1, 1, 1);
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * laserspeed;
-            if ((int)target.position.y - (int)transform.position.y < 0)
+            if (Mathf.RoundToInt(target.position.y - transform.position.y) < 0)
             {
                 Debug.Log("Ldown");
                 bullet.transform.eulerAngles = new Vector3(0, 0, 90);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
             }
-            else if ((int)target.position.y - (int)transform.position.y > 0)
+            else if (Mathf.RoundToInt(target.position.y - transform.position.y) > 0)
             {
                 Debug.Log("Lup");
                 bullet.transform.eulerAngles = new Vector3(0, 0, -90);
@@ -72,28 +79,66 @@ public class MinionManager : MonoBehaviour
         }
 
     }
-    void Detect()
+
+    void Roaming()
     {
-        if (Vector3.Distance(transform.position, target.position) <= MaxDist && Vector3.Distance(transform.position, target.position) > MinDist)
+        if (move)
         {
-            mMinionAction.Move(target, moveSpeed);
-            if (IsAttacking == false)
+            if (elapsedTime < duration)
             {
-                //InvokeRepeating("Shoot", 0, AttackSpeed);
-                IsAttacking = true;
+                randomX = Random.Range(-2, 2);
+                transform.Translate(new Vector3(randomX, 0, 0) * Time.deltaTime);
+                elapsedTime += Time.deltaTime;
+
+            }
+            else
+            {
+                move = false;
+                wait = Random.Range(2, 5);
+                waitTime = 0f;
             }
         }
-        if (Vector3.Distance(transform.position, target.position) > MaxDist)
+        else
         {
-            IsAttacking = false;
-            //CancelInvoke("Shoot");
-        }
-        RaycastHit2D groundinfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 2f);
+            if (waitTime < wait)
+            {
+                waitTime += Time.deltaTime;
+            }
+            else
+            {
+                move = true;
+                elapsedTime = 0f;
+                randomX = Random.Range(-3, 3);
 
-        if (groundinfo.collider == null)
-        {
-            mMinionAction.Jump(300);
+            }
         }
+    }
+    void Detect()
+    {
+        if(Vector3.Distance(transform.position, target.position) <= MaxDist)
+        {
+            if (Vector3.Distance(transform.position, target.position) <= MaxDist && Vector3.Distance(transform.position, target.position) > MinDist)
+            {
+                mMinionAction.Move(target, moveSpeed);
+                if (IsAttacking == false)
+                {
+                    InvokeRepeating("Shoot", 0, AttackSpeed);
+                    IsAttacking = true;
+                }
+            }
+            RaycastHit2D groundinfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 2f);
+            if (groundinfo.collider == null)
+            {
+                mMinionAction.Jump(300);
+            }
+        }
+        else
+        {
+            Roaming();
+            IsAttacking = false;
+            CancelInvoke("Shoot");
+        }
+
     }
     public void Damage(int damage)
     {

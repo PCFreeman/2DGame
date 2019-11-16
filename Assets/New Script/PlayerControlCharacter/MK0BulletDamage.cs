@@ -12,11 +12,6 @@ public class MK0BulletDamage : MonoBehaviour {
             Destroy(gameObject);
 
         }
-        if (collision.gameObject.tag == "Sense")
-        {
-            MinionManager jump = collision.gameObject.GetComponentInParent<MinionManager>();
-            jump.mMinionAction.Jump(300);
-        }
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
