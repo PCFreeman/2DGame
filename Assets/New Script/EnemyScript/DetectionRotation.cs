@@ -17,14 +17,15 @@ public class DetectionRotation : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerProjectile")
         {
-          if(collision.gameObject.transform.eulerAngles.z==270)
+          if(collision.gameObject.transform.eulerAngles.z == 0.0f)
+            {
+                mMinionAction.Jump(300);
+                print(collision.transform.eulerAngles);
+            }
+            else 
             {
                 mMinionAction.SideShift(150);
                 print(collision.transform.eulerAngles);
-            }
-            else
-            {
-                mMinionAction.Jump(300);
             }
 
         }
@@ -35,7 +36,7 @@ public class DetectionRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(parentobject.transform.position, new Vector3(0, 0, 1), Time.deltaTime * 80);
+        transform.RotateAround(parentobject.transform.position, new Vector3(0, 0, 1), Time.deltaTime * 150);
 
       
     }

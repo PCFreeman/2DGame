@@ -30,7 +30,7 @@ public class MinionManager : MonoBehaviour
     {
         mMinionAction = GetComponent<MinionAction>();
         mAudioSource = GetComponent<AudioSource>();
-
+        randomX = Random.Range(-2, 2);
 
 
     }
@@ -86,10 +86,8 @@ public class MinionManager : MonoBehaviour
         {
             if (elapsedTime < duration)
             {
-                randomX = Random.Range(-2, 2);
-                transform.Translate(new Vector3(randomX, 0, 0) * Time.deltaTime);
+                mMinionAction.Move(new Vector3(randomX, 0, 0) * Time.deltaTime);
                 elapsedTime += Time.deltaTime;
-
             }
             else
             {
@@ -113,33 +111,33 @@ public class MinionManager : MonoBehaviour
             }
         }
     }
+
+
     void Detect()
     {
-        if(Vector3.Distance(transform.position, target.position) <= MaxDist)
+        if(Vector3.Distance(transform.position, target.position) <= MaxDist && Vector3.Distance(transform.position, target.position) >= MinDist)
         {
-            if (Vector3.Distance(transform.position, target.position) <= MaxDist && Vector3.Distance(transform.position, target.position) > MinDist)
+            mMinionAction.Move(target, moveSpeed);
+            if (IsAttacking == false)
             {
-                mMinionAction.Move(target, moveSpeed);
-                if (IsAttacking == false)
-                {
-                    InvokeRepeating("Shoot", 0, AttackSpeed);
-                    IsAttacking = true;
-                }
+                InvokeRepeating("Shoot", 0, AttackSpeed);
+                IsAttacking = true;
             }
-            RaycastHit2D groundinfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 2f);
-            if (groundinfo.collider == null)
-            {
-                mMinionAction.Jump(300);
-            }
+     
         }
-        else
+        else if(Vector3.Distance(transform.position, target.position) > MaxDist)
         {
             Roaming();
             IsAttacking = false;
             CancelInvoke("Shoot");
         }
-
+        RaycastHit2D groundinfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 2f);
+        if (groundinfo.collider == null)
+        {
+            mMinionAction.Jump(300);
+        }
     }
+
     public void Damage(int damage)
     {
         CurrentHealth -= damage;
@@ -156,7 +154,11 @@ public class MinionManager : MonoBehaviour
     {
 
         //mMinionAction.ShootStartCoroutine();
-         Detect();
+        
        
+    }
+    private void LateUpdate()
+    {
+        Detect();
     }
 }

@@ -67,44 +67,65 @@ public class MinionAction : MonoBehaviour
 
     public void Move(Transform target,float moveSpeed)
     {
-            transform.position += (target.position - transform.position).normalized * moveSpeed * Time.deltaTime;
-            if (previousLocation.x - transform.position.x >= 0)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-                AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
+        transform.position += (target.position - transform.position).normalized * moveSpeed * Time.deltaTime;
+        if (previousLocation.x - transform.position.x >= 0)
+        {
+           transform.localScale = new Vector3(-1, 1, 1);
+           AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
+           print(previousLocation.x - transform.position.x);
 
-            }
-            else if (previousLocation.x - transform.position.x <= 0)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-                AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
-
-            }
         }
+        else if (previousLocation.x - transform.position.x <= 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
+            print(previousLocation.x - transform.position.x);
+        }           
+    
+    }
+
+    public void Move(Vector3 direction)
+    {
+        transform.Translate(direction);
+        if (previousLocation.x - transform.position.x >= 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
+
+        }
+        else if (previousLocation.x - transform.position.x <= 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
+
+        }
+
+    }
     public void Jump(float JumpForce)
     {
       if (!mAnimator.GetBool("Jump"))
         {
-                myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
-                //Am.JumpAnimation(true);
-                AnimationManager.instance.PlayAnimation(mAnimator, "Jump", true);
+            myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
+            //Am.JumpAnimation(true);
+            AnimationManager.instance.PlayAnimation(mAnimator, "Jump", true);
         }
       
     }
 
     public void SideShift(float force)
     {
-        myRigidbody.AddForce(new Vector3(force, 0, 0));
+        myRigidbody.AddForce(new Vector3(Random.Range(-force, force) * 2, 0, 0));
     }
     private void Update()
     {
-        previousLocation = transform.position;
-        if ((int)previousLocation.x - (int)transform.position.x == 0)
+        if (previousLocation.x == transform.position.x)
         {
             AnimationManager.instance.PlayAnimation(mAnimator, "Walk", false);
         }
+        previousLocation = transform.position;
+
     }
-    // Update is called once per frame
+
 
     //IEnumerator ShootCoroutine()
     //{
