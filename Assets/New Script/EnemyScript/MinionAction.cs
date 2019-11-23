@@ -69,7 +69,7 @@ public class MinionAction : MonoBehaviour
 
     public void SideShift(float force)
     {
-        myRigidbody.AddForce(new Vector3(Random.Range(-force, force) * 2, 0, 0));
+        myRigidbody.AddForce(new Vector3(Random.Range(-force, force) * 100, 0, 0));
     }
 
     private void Update()

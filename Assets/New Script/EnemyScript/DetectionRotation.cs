@@ -25,7 +25,7 @@ public class DetectionRotation : MonoBehaviour
             }
             else 
             {
-                mMinionAction.SideShift(250);
+                mMinionAction.SideShift(2);
                 dodged = true;
             }
 
@@ -42,7 +42,7 @@ public class DetectionRotation : MonoBehaviour
         {
             if (en.tag == "PlayerExplosive"&& dodged == false)
             {
-                mMinionAction.SideShift(250);
+                mMinionAction.SideShift(4);
                 dodged = true;
             }
         }

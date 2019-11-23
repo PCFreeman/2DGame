@@ -7,8 +7,7 @@ public class PlayerExplosive : MonoBehaviour
     float timer = 1.0f;
     bool collide = false;
     public float blastradius;
-
-
+    public AudioClip clip;
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm") || collision.gameObject.CompareTag("Enemy"))
@@ -16,11 +15,14 @@ public class PlayerExplosive : MonoBehaviour
             collide = true;
         }
     }
-
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(this.transform.position, blastradius);
+    }
     // Start is called before the first frame update
     void Start()
     {
-       
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class PlayerExplosive : MonoBehaviour
                     min.Damage(100);
                 }
             }
+            SoundManager.instance.PlaySingle(clip);
                 Destroy(gameObject);
         }
     }
