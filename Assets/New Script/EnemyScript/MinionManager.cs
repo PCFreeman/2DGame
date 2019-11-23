@@ -19,7 +19,6 @@ public class MinionManager : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
     public Transform GroundDetection;
-
     public float duration;    //the max time of a walking session (set to ten)
     float elapsedTime = 0f; //time since started walk
     float wait = 0f; //wait this much time
@@ -45,37 +44,46 @@ public class MinionManager : MonoBehaviour
         {
             Debug.Log("right");
             bullet.transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = bullet.transform.localScale;
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * laserspeed;
-            if (Mathf.RoundToInt(target.position.y - transform.position.y) < 0)
+            if( target.position.x - transform.position.x < 1 && target.position.x - transform.position.x>-1)
             {
-                Debug.Log("Rdown");
-                bullet.transform.eulerAngles = new Vector3(0, 0, -90);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
+                if (Mathf.RoundToInt(target.position.y - transform.position.y) < 0)
+                {
+                    Debug.Log("Rdown");
+                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
+                }
+                else if (Mathf.RoundToInt(target.position.y - transform.position.y) > 0 )
+                {
+                    Debug.Log("Rup");
+                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
+                }
             }
-            else if (Mathf.RoundToInt(target.position.y - transform.position.y) > 0)
-            {
-                Debug.Log("Rup");
-                bullet.transform.eulerAngles = new Vector3(0, 0, 90);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
-            }
+            
         }
         else if (Mathf.RoundToInt(target.position.x - transform.position.x) <= 0)
         {
             Debug.Log("left");
             bullet.transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = bullet.transform.localScale;
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * laserspeed;
-            if (Mathf.RoundToInt(target.position.y - transform.position.y) < 0)
+            if (target.position.x - transform.position.x < 1 && target.position.x - transform.position.x > -1)
             {
-                Debug.Log("Ldown");
-                bullet.transform.eulerAngles = new Vector3(0, 0, 90);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
-            }
-            else if (Mathf.RoundToInt(target.position.y - transform.position.y) > 0)
-            {
-                Debug.Log("Lup");
-                bullet.transform.eulerAngles = new Vector3(0, 0, -90);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
-            }
+                if (Mathf.RoundToInt(target.position.y - transform.position.y) < 0 )
+                {
+                    Debug.Log("Ldown");
+                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * laserspeed;
+                }
+                else if (Mathf.RoundToInt(target.position.y - transform.position.y) > 0 )
+                {
+                    Debug.Log("Lup");
+                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * laserspeed;
+                }
+            }    
         }
 
     }
@@ -131,6 +139,10 @@ public class MinionManager : MonoBehaviour
             IsAttacking = false;
             CancelInvoke("Shoot");
         }
+        if (Vector3.Distance(new Vector3(0, transform.position.y, 0), new Vector3(0, target.position.y, 0)) > 2 && target.position.y- transform.position.y > 0)
+        {
+            mMinionAction.Jump(300);
+        }
         RaycastHit2D groundinfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 2f);
         if (groundinfo.collider == null)
         {
@@ -154,7 +166,6 @@ public class MinionManager : MonoBehaviour
     {
 
         //mMinionAction.ShootStartCoroutine();
-        
        
     }
     private void LateUpdate()

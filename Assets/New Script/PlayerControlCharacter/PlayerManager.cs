@@ -10,7 +10,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject firepoint;
     public GameObject foot;
     public GameObject laser;
+    public GameObject Explosive;
     public float BulletSpeed;
+    public float ThrowPower;
     public int MaxHealth;
     public int CurrentHealth;
     public AudioClip StepSound;
@@ -62,5 +64,6 @@ public class PlayerManager : MonoBehaviour
         mPlayerActions.JumpAction(JumpForce);
         mPlayerActions.KickAction(foot);
         mPlayerActions.ShootAction(laser,firepoint,transform,BulletSpeed);
+        mPlayerActions.ThrowAction(Explosive,firepoint,transform, ThrowPower);
     }
 }

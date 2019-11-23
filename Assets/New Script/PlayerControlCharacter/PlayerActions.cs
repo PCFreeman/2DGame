@@ -8,7 +8,7 @@ public class PlayerActions : MonoBehaviour
     Animator mAnimator;
     AudioSource mAudioSource;
     public AudioClip ShootSound;
-
+    public AudioClip jump;
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm") || collision.gameObject.CompareTag("Enemy"))
@@ -68,6 +68,7 @@ public class PlayerActions : MonoBehaviour
                 myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
                 //Am.JumpAnimation(true);
                 AnimationManager.instance.PlayAnimation(mAnimator, "Jump", true);
+                SoundManager.instance.PlaySingle(jump);
             }
         }
     }
@@ -124,6 +125,24 @@ public class PlayerActions : MonoBehaviour
             }
             mAudioSource.clip = ShootSound;
             mAudioSource.Play();
+        }
+    }
+
+    public void ThrowAction(GameObject Explosive, GameObject WeaponPosition, Transform Characterrotation, float ThrowPower)
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GameObject bullet = Instantiate(Explosive, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
+            if (transform.localScale.x > 0)
+            {
+                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(1,1,0)* ThrowPower);
+            }
+            else if (transform.localScale.x < 0)
+            {
+                bullet.transform.localScale = new Vector3(-1, 1, 1);
+                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 1, 0) * ThrowPower);
+            }
+
         }
     }
     // Update is called once per frame
