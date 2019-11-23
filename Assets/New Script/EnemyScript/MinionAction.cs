@@ -38,7 +38,6 @@ public class MinionAction : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
             AnimationManager.instance.PlayAnimation(mAnimator, "Walk", true);
         }
-        print(transform.position);
     }
 
     public void Move(Vector3 direction)
@@ -69,7 +68,8 @@ public class MinionAction : MonoBehaviour
 
     public void SideShift(float force)
     {
-        myRigidbody.AddForce(new Vector3(Random.Range(-force, force) * 100, 0, 0));
+        myRigidbody.AddForce(new Vector3(Random.Range(-2, 2) * force, 0, 0));
+
     }
 
     private void Update()

@@ -135,12 +135,12 @@ public class PlayerActions : MonoBehaviour
             GameObject bullet = Instantiate(Explosive, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
             if (transform.localScale.x > 0)
             {
-                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(1,1,0)* ThrowPower);
+                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(1,1,0) * ThrowPower);
             }
             else if (transform.localScale.x < 0)
             {
                 bullet.transform.localScale = new Vector3(-1, 1, 1);
-                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 1, 0) * ThrowPower);
+                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 1, 0) *  ThrowPower);
             }
 
         }
