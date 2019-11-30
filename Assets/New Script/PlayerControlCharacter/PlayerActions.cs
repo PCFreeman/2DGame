@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
@@ -9,6 +10,10 @@ public class PlayerActions : MonoBehaviour
     AudioSource mAudioSource;
     public AudioClip ShootSound;
     public AudioClip jump;
+
+    public bool CanFire = true;
+    public bool CanKick = true;
+    public bool CanThrow = true;
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm") || collision.gameObject.CompareTag("Enemy"))
@@ -78,8 +83,13 @@ public class PlayerActions : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) )
         {
             // Am.KickAnimation(true);
-            AnimationManager.instance.PlayAnimation(mAnimator, "Kick", true);
-            footpoint.GetComponent<BoxCollider2D>().enabled = true;
+            if(CanKick)
+            {
+                CanKick = false;
+                AnimationManager.instance.PlayAnimation(mAnimator, "Kick", true);
+                footpoint.GetComponent<BoxCollider2D>().enabled = true;
+
+            }
         }
         else
         {
@@ -92,39 +102,44 @@ public class PlayerActions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            GameObject bullet = Instantiate(Bullet, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
-            if (transform.localScale.x > 0)
+            if(CanFire)
             {
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * bulletSpeed;
-                if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
+                CanFire = false;
+                GameObject bullet = Instantiate(Bullet, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
+                if (transform.localScale.x > 0)
                 {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * bulletSpeed;
-                }
-                if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
-                {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
-                }
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * bulletSpeed;
+                    if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
+                    {
+                        bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                        bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * bulletSpeed;
+                    }
+                    if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
+                    {
+                        bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                        bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+                    }
 
-            }
-            else if (transform.localScale.x < 0)
-            {
-                bullet.transform.localScale = new Vector3(-1, 1, 1);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * bulletSpeed;
-                if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
-                {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, 90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * bulletSpeed;
                 }
-                if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
+                else if (transform.localScale.x < 0)
                 {
-                    bullet.transform.eulerAngles = new Vector3(0, 0, -90);
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+                    bullet.transform.localScale = new Vector3(-1, 1, 1);
+                    bullet.GetComponent<Rigidbody2D>().velocity = Vector3.left * bulletSpeed;
+                    if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.Z))
+                    {
+                        bullet.transform.eulerAngles = new Vector3(0, 0, 90);
+                        bullet.GetComponent<Rigidbody2D>().velocity = Vector3.down * bulletSpeed;
+                    }
+                    if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Z))
+                    {
+                        bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+                        bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+                    }
                 }
+                mAudioSource.clip = ShootSound;
+                mAudioSource.Play();
             }
-            mAudioSource.clip = ShootSound;
-            mAudioSource.Play();
+        
         }
     }
 
@@ -132,19 +147,22 @@ public class PlayerActions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GameObject bullet = Instantiate(Explosive, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
-            if (transform.localScale.x > 0)
+            if(CanThrow)
             {
-                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(1,1,0) * ThrowPower);
-            }
-            else if (transform.localScale.x < 0)
-            {
-                bullet.transform.localScale = new Vector3(-1, 1, 1);
-                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 1, 0) *  ThrowPower);
+                CanThrow = false;
+                GameObject bullet = Instantiate(Explosive, WeaponPosition.transform.position, Characterrotation.rotation) as GameObject;
+                if (transform.localScale.x > 0)
+                {
+                    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, 1, 0) * ThrowPower);
+                }
+                else if (transform.localScale.x < 0)
+                {
+                    bullet.transform.localScale = new Vector3(-1, 1, 1);
+                    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 1, 0) * ThrowPower);
+                }
             }
 
         }
     }
     // Update is called once per frame
-
 }

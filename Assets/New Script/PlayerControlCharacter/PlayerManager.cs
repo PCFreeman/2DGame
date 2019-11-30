@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -21,6 +22,9 @@ public class PlayerManager : MonoBehaviour
     private float BlinkCounter = 0;
     PlayerActions mPlayerActions;
 
+    public float CDForAbility1;
+    public float CDForAbility2;
+    public float CDForAbility3;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +47,7 @@ public class PlayerManager : MonoBehaviour
         if (BlinkCounter >= BlinkAmount)
         {
             CancelInvoke("BlinkThenDie");
-            Destroy(gameObject);
+            //-Destroy(gameObject);
             SceneManager.LoadScene(2);
         }
         ++BlinkCounter;
@@ -58,12 +62,31 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+
     void Update()
     {
         mPlayerActions.MoveAction(Speed);
         mPlayerActions.JumpAction(JumpForce);
         mPlayerActions.KickAction(foot);
-        mPlayerActions.ShootAction(laser,firepoint,transform,BulletSpeed);
+        mPlayerActions.ShootAction(laser, firepoint, transform, BulletSpeed);
         mPlayerActions.ThrowAction(Explosive,firepoint,transform, ThrowPower);
+
+        if(!mPlayerActions.CanFire)
+        {
+            UIManager.instance.UpdateAbilityCD(UIManager.instance.Ability1, CDForAbility1, ref mPlayerActions.CanFire);
+        }
+        if (!mPlayerActions.CanKick)
+        {
+            UIManager.instance.UpdateAbilityCD(UIManager.instance.Ability2, CDForAbility2, ref mPlayerActions.CanKick);
+        }
+        if (!mPlayerActions.CanThrow)
+        {
+            UIManager.instance.UpdateAbilityCD(UIManager.instance.Ability3, CDForAbility3, ref mPlayerActions.CanThrow);
+        }
+
+        if(Input.GetKeyDown(KeyCode.F5))
+        {
+            Damage(10);
+        }
     }
 }
