@@ -68,10 +68,14 @@ public class UIManager : MonoBehaviour
         {
             HelperTime = CD;
         }
+        if (CDIMage.fillAmount == 1)
+        {
+            CDIMage.fillAmount = 0;
+        }
 
-        CDIMage.fillAmount -= 1.0f / (CD + (HelperTime - CD)) * Time.deltaTime;
+        CDIMage.fillAmount += 1.0f / (CD + (HelperTime - CD)) * Time.deltaTime;
 
-        if (CDIMage.fillAmount <= 0)
+        if (CDIMage.fillAmount >= 1)
         {
             CDIMage.fillAmount = 1;
             HelperTime = -1;
