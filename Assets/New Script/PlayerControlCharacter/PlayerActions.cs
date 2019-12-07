@@ -10,7 +10,7 @@ public class PlayerActions : MonoBehaviour
     AudioSource mAudioSource;
     public AudioClip ShootSound;
     public AudioClip jump;
-
+    public bool DeadZone = false;
     public bool CanFire = true;
     public bool CanKick = true;
     public bool CanThrow = true;
@@ -20,6 +20,10 @@ public class PlayerActions : MonoBehaviour
         {
             //Am.JumpAnimation(false);
             AnimationManager.instance.PlayAnimation(mAnimator, "Jump", false);
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            DeadZone = true;
         }
     }
 

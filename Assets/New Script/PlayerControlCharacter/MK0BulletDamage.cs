@@ -18,12 +18,14 @@ public class MK0BulletDamage : MonoBehaviour {
             MinionManager Health = collision.gameObject.GetComponent<MinionManager>();
             Health.Damage(Damage);
         }
-        if (collision.gameObject.GetComponent<BOSSHP>())
+        if (collision.gameObject.tag == "BOSS")
         {
-            BOSSHP Health = collision.gameObject.GetComponent<BOSSHP>();
-            Health.Damage(Damage);
+           Destroy(gameObject);
+           BOSSManager BHealth = collision.gameObject.GetComponent<BOSSManager>();
+           BHealth.Damage(Damage);
+
         }
-         if(collision.gameObject.GetComponent<TurretHP>())
+        if (collision.gameObject.GetComponent<TurretHP>())
         {
             Debug.Log("hit");
             TurretHP Health = collision.gameObject.GetComponent<TurretHP>();
@@ -32,11 +34,6 @@ public class MK0BulletDamage : MonoBehaviour {
         if (collision.gameObject.GetComponent<EndGameTurret>())
         {
             EndGameTurret Health = collision.gameObject.GetComponent<EndGameTurret>();
-            Health.Damage(Damage);
-        }
-        if (collision.gameObject.GetComponent<B1die>())
-        {
-            B1die Health = collision.gameObject.GetComponent<B1die>();
             Health.Damage(Damage);
         }
     }

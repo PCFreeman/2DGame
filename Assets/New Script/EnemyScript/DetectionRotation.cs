@@ -5,13 +5,13 @@ using UnityEngine;
 public class DetectionRotation : MonoBehaviour
 {
    public GameObject parentobject;
-   MinionAction mMinionAction;
+   BOSSAction mBossAction;
    bool dodged = false;
    float cd = 1;
     // Start is called before the first frame update
     void Start()
     {
-        mMinionAction = GetComponentInParent<MinionAction>();
+        mBossAction = GetComponentInParent<BOSSAction>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -20,12 +20,12 @@ public class DetectionRotation : MonoBehaviour
         {
           if(collision.gameObject.transform.eulerAngles.z == 0.0f)
             {
-                mMinionAction.Jump(300);
+                mBossAction.Jump(300);
                 dodged = true;
             }
             else 
             {
-                mMinionAction.SideShift(200);
+                mBossAction.SideShift(200);
                 dodged = true;
             }
 
@@ -42,7 +42,7 @@ public class DetectionRotation : MonoBehaviour
         {
             if (en.tag == "PlayerExplosive"&& dodged == false)
             {
-                mMinionAction.SideShift(250);
+                mBossAction.SideShift(250);
                 dodged = true;
             }
         }

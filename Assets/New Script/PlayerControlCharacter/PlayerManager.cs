@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     float BlinkAmount = 3;
     private float BlinkCounter = 0;
     PlayerActions mPlayerActions;
-
+    public AudioClip Die;
     public float CDForAbility1;
     public float CDForAbility2;
     public float CDForAbility3;
@@ -48,7 +48,9 @@ public class PlayerManager : MonoBehaviour
         {
             CancelInvoke("BlinkThenDie");
             //-Destroy(gameObject);
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
+            UIManager.instance.Over.SetActive(true);
+            Time.timeScale = 0;
         }
         ++BlinkCounter;
     }
@@ -58,6 +60,7 @@ public class PlayerManager : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            SoundManager.instance.PlaySingle(Die);
             InvokeRepeating("BlinkThenDie", 0f, BlinkTime);
         }
     }
@@ -86,7 +89,11 @@ public class PlayerManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.F5))
         {
-            Damage(10);
+            Damage(100);
+        }
+        if(mPlayerActions.DeadZone ==true)
+        {
+            Damage(1000);
         }
     }
 }

@@ -6,7 +6,7 @@ public class GameOver : MonoBehaviour {
 
     public void tryagain()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); 
     }
     public void Exit()
     {
