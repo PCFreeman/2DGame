@@ -12,6 +12,11 @@ public class Foot : MonoBehaviour
             MinionManager Health = collision.gameObject.GetComponent<MinionManager>();
             Health.Damage(Damage);
         }
+        if (collision.gameObject.tag == "BOSS")
+        {
+            BOSSManager Health = collision.gameObject.GetComponent<BOSSManager>();
+            Health.Damage(Damage);
+        }
 
         if (collision.gameObject.GetComponent<BOSSHP>())
         {

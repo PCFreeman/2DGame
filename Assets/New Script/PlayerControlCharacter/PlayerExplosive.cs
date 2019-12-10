@@ -10,7 +10,7 @@ public class PlayerExplosive : MonoBehaviour
     public AudioClip clip;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("PlantForm") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BOSS"))
         {
             collide = true;
         }
@@ -42,6 +42,11 @@ public class PlayerExplosive : MonoBehaviour
                 {
                     MinionManager min = en.GetComponent<MinionManager>();
                     min.Damage(100);
+                }
+                if (en.tag == "BOSS")
+                {
+                    BOSSManager boss = en.GetComponent<BOSSManager>();
+                    boss.Damage(100);
                 }
             }
             SoundManager.instance.PlaySingle(clip);
