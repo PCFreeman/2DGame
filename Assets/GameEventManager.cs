@@ -118,7 +118,15 @@ public class GameEventManager : MonoBehaviour
         {
             mBossTrigger = GameObject.Find("Final").transform.Find("BOSSTrigger").GetComponent<BOSSTrigger>();
         }
-       if (mBossTrigger.isStepedon!=true)
+       if(SpawnPointOne==null)
+        {
+        SpawnPointOne = GameObject.Find("Final").transform.Find("SpawnSpotOne").gameObject;
+        }
+        if (SpawnPointTwo == null)
+        {
+            SpawnPointTwo = GameObject.Find("Final").transform.Find("SpawnSpotTwo").gameObject;
+        }
+        if (mBossTrigger.isStepedon!=true)
         {
             Boss.SetActive(false);
             playerdonce = false;
