@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip BOSSFIGHT;
     public AudioClip Normal;
     public static SoundManager instance = null;
+    List<AudioSource> AudioList;
     // Start is called before the first frame update
 
     void Awake()
@@ -23,7 +24,10 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-
+    private void Start()
+    {
+        AudioList = new List<AudioSource>();
+    }
     public void PlaySingle(AudioClip clip)
     {
         efxSource.clip = clip;
@@ -35,7 +39,15 @@ public class SoundManager : MonoBehaviour
         BGMSource.clip = clip;
         BGMSource.Play();
     }
+    public void PlaySingleNew(AudioClip clip)
+    {
 
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.volume = 0.5f;
+        AudioList.Add(audioSource);
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
     public void PlayFinalBoss()
     {
         BGMSource.clip = BOSSFIGHT;
@@ -45,5 +57,21 @@ public class SoundManager : MonoBehaviour
     {
         BGMSource.clip = Normal;
         BGMSource.Play();
+    }
+
+    private void Update()
+    {
+        if(AudioList != null)
+        {
+            for(int i=0;i<AudioList.Count;i++)
+            {
+                if(!AudioList[i].isPlaying)
+                {
+                    Destroy(AudioList[i]);
+                    AudioList.Remove(AudioList[i]);
+                }
+            }
+
+        }
     }
 }

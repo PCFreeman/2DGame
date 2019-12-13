@@ -49,8 +49,8 @@ public class PlayerExplosive : MonoBehaviour
                     boss.Damage(100);
                 }
             }
-            SoundManager.instance.PlaySingle(clip);
-                Destroy(gameObject);
+            SoundManager.instance.PlaySingleNew(clip);
+            Destroy(gameObject);
         }
     }
 }

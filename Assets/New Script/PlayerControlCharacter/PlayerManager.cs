@@ -38,7 +38,8 @@ public class PlayerManager : MonoBehaviour
     }
     public void footsteps()
     {
-        SoundManager.instance.PlaySingle(StepSound);
+        mPlayerActions.mFootStepAudio.clip = StepSound;
+        mPlayerActions.mFootStepAudio.Play();
     }
     private void BlinkThenDie()
     {

@@ -7,7 +7,9 @@ public class PlayerActions : MonoBehaviour
 {
     private Rigidbody2D myRigidbody;
     Animator mAnimator;
-    AudioSource mAudioSource;
+    public AudioSource mJumpAudio;
+    public AudioSource mShootAudio;
+    public AudioSource mFootStepAudio;
     public AudioClip ShootSound;
     public AudioClip jump;
     public bool DeadZone = false;
@@ -31,7 +33,7 @@ public class PlayerActions : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         mAnimator = GetComponent<Animator>();
-        mAudioSource = GetComponent<AudioSource>();
+        
     }
     public void MoveAction(float speed)
     {
@@ -77,7 +79,8 @@ public class PlayerActions : MonoBehaviour
                 myRigidbody.AddForce(new Vector3(0, JumpForce, 0));
                 //Am.JumpAnimation(true);
                 AnimationManager.instance.PlayAnimation(mAnimator, "Jump", true);
-                SoundManager.instance.PlaySingle(jump);
+                mJumpAudio.clip = jump;
+                mJumpAudio.Play();
             }
         }
     }
@@ -140,8 +143,8 @@ public class PlayerActions : MonoBehaviour
                         bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
                     }
                 }
-                mAudioSource.clip = ShootSound;
-                mAudioSource.Play();
+                mShootAudio.clip = ShootSound;
+                mShootAudio.Play();
             }
         
         }
