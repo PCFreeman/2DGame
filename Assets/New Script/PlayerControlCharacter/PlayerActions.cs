@@ -35,9 +35,10 @@ public class PlayerActions : MonoBehaviour
             if(!Input.GetKey(KeyCode.Space))
             {
                 myRigidbody.velocity = Vector3.zero;
+                myRigidbody.position = collision.transform.position;
                 myRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
-                transform.position = collision.transform.position;
-              
+
+
             }
         }
     }
