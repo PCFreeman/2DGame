@@ -190,7 +190,7 @@ public class MinionManager : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            SoundManager.instance.PlaySingle(Death);
+            SoundManager.instance.PlaySingleNew(Death);
             Destroy(gameObject);
         }
 

@@ -66,7 +66,6 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         mPlayerActions.MoveAction(Speed);
@@ -96,5 +95,7 @@ public class PlayerManager : MonoBehaviour
         {
             Damage(1000);
         }
+
+
     }
 }

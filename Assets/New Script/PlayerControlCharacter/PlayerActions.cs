@@ -28,7 +28,19 @@ public class PlayerActions : MonoBehaviour
             DeadZone = true;
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Side"))
+        {
+            if(!Input.GetKey(KeyCode.Space))
+            {
+                myRigidbody.velocity = Vector3.zero;
+                myRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+                transform.position = collision.transform.position;
+              
+            }
+        }
+    }
     public void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
